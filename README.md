@@ -1,5 +1,3 @@
-[English](README.md) | [中文](README-CN.md)
-
 # Doraemon
 
 [![License](http://img.shields.io/badge/license-GPLv3+-brightgreen.svg)](LICENSE)
@@ -64,10 +62,3 @@ doraemon 的动态配置告警规则能力，来自相对独立的 rule-engine�
 ## 文档
 
 **[Wiki](docs/readme-CN.md)**
-
-## 贡献者
-
-- [@BennieMeng](https://github.com/BennieMeng)
-- [@JayRyu](https://github.com/jayryu)
-- [@JoveYu](https://github.com/JoveYu)
-- [@70data](https://github.com/70data)
