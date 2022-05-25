@@ -1,7 +1,4 @@
 # Doraemon
-
-[![License](http://img.shields.io/badge/license-GPLv3+-brightgreen.svg)](LICENSE)
-
 Doraemon 是一个基于 **[Prometheus](https://prometheus.io)** 的监控系统。该系统主要由三个组件组成——计算引擎（Rule Engine），报警网关（Alert Gateway）以及 Web-UI。与 Prometheus 使用静态的配置文件来配置报警规则不同，Doraemon 可以通过 Web-UI 动态的配置加载报警规则。此外，Doraemon 还集成了许多自定义的报警功能。
 
 ## 特性
@@ -43,21 +40,25 @@ doraemon 的动态配置告警规则能力，来自相对独立的 rule-engine�
 - 克隆代码仓库
 
   ```bash
-  $ git clone https://github.com/Qihoo360/doraemon.git
+  $ git clone https://github.com/openstack-test/prometheus-alert.git
   ```
 
 - 修改配置文件  
-  1.将[deployments/docker-compose/conf/config.js](deployments/docker-compose/conf/config.js)中的"localhost"替换为本机物理网卡 ip，端口号保持不变。  
-  2.修改[deployments/docker-compose/conf/app.conf](deployments/docker-compose/conf/app.conf)，将 WebUrl 中的"localhost"替换为本机物理网卡 ip，端口号保持不变。
+  1.将[deployments/docker-compose/conf/config.js](deployments/docker-compose/conf/config.js)中的"localhost"替换为本机实际ip，端口号保持不变。  
+  2.修改[deployments/docker-compose/conf/app.conf](deployments/docker-compose/conf/app.conf)，将 WebUrl 中的"localhost"替换为本机实际ip，端口号保持不变。
 - 启动服务  
-   在 Doraemon 的根目录下，通过 docker-compose 创建服务
+   A. 在 Doraemon 的根目录下，通过 docker-compose 创建服务
 
   ```bash
   $ cd deployments/docker-compose/
   $ docker-compose up -d
   ```
-
-  通过上述命令，您可以从通过 http://本机ip:32000 访问 Doraemon。默认登录用户 admin，密码是 123456。
+  
+   B. 直接运行(适合开发环境)
+   ```
+   
+   ```
+   通过上述命令，您可以从通过 http://本机ip:32000 访问 Doraemon。默认登录用户 admin，密码是 123456。
 
 ## 文档
 
