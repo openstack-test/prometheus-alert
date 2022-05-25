@@ -46,7 +46,7 @@ doraemon 的动态配置告警规则能力，来自相对独立的 rule-engine�
 - 修改配置文件  
   1.将[deployments/docker-compose/conf/config.js](deployments/docker-compose/conf/config.js)中的"localhost"替换为本机实际ip，端口号保持不变。  
   2.修改[deployments/docker-compose/conf/app.conf](deployments/docker-compose/conf/app.conf)，将 WebUrl 中的"localhost"替换为本机实际ip，端口号保持不变。
-- 启动服务  
+- 启动服务(二者选其一)  
    A. 在 Doraemon 的根目录下，通过 docker-compose 创建服务
 
   ```bash
@@ -55,8 +55,20 @@ doraemon 的动态配置告警规则能力，来自相对独立的 rule-engine�
   ```
   
    B. 直接运行(适合开发环境)
-   ```
-   
+   ```bash
+   #先启动alert-gateway
+   cd cmd/alert-gateway && go run main.go
+  
+   #启动rule-engine
+   cd cmd/rule-engine && go run main.go --gateway.url=http://alert-gateway:port
+  
+   #启动前端
+   npm i
+   npm run dll OR npm run dev
+   # 涉及到的 api 域名指向需要修改 app/config.js,即后端地址
+   window.CONFIG = {
+     baseURL: 'http://localhost/',
+   }
    ```
    通过上述命令，您可以从通过 http://本机ip:32000 访问 Doraemon。默认登录用户 admin，密码是 123456。
 
