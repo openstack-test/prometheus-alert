@@ -44,7 +44,7 @@ doraemon 的动态配置告警规则能力，来自相对独立的 rule-engine�
   ```
 
 - 启动服务(二者选其一)  
-   A. 在 Doraemon 的根目录下，通过 docker-compose 创建服务
+  A. 在 Doraemon 的根目录下，通过 docker-compose 创建服务
 
   修改配置文件  
   1.将deployments/docker-compose/conf/config.js中的"localhost"替换为本机实际ip，端口号保持不变。  
