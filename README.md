@@ -43,11 +43,12 @@ doraemon 的动态配置告警规则能力，来自相对独立的 rule-engine�
   $ git clone https://github.com/openstack-test/prometheus-alert.git
   ```
 
-- 修改配置文件  
-  1.将[deployments/docker-compose/conf/config.js](deployments/docker-compose/conf/config.js)中的"localhost"替换为本机实际ip，端口号保持不变。  
-  2.修改[deployments/docker-compose/conf/app.conf](deployments/docker-compose/conf/app.conf)，将 WebUrl 中的"localhost"替换为本机实际ip，端口号保持不变。
 - 启动服务(二者选其一)  
    A. 在 Doraemon 的根目录下，通过 docker-compose 创建服务
+
+  修改配置文件  
+  1.将deployments/docker-compose/conf/config.js中的"localhost"替换为本机实际ip，端口号保持不变。  
+  2.修改deployments/docker-compose/conf/app.conf，将 WebUrl 中的"localhost"替换为本机实际ip，端口号保持不变。
 
   ```bash
   $ cd deployments/docker-compose/
@@ -55,7 +56,9 @@ doraemon 的动态配置告警规则能力，来自相对独立的 rule-engine�
   ```
   
    B. 直接运行(适合开发环境)
+   
    修改conf/app.conf配置文件
+
    ```bash
    #先启动alert-gateway
    cd cmd/alert-gateway && go run main.go
