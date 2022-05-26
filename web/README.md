@@ -3,7 +3,7 @@
 ### 安装好依赖包
 ```
 // node -v >= 10.16.0
-npm i
+npm install --registry=https://registry.npm.taobao.org
 npm run dll
 ```
 ### 编译，热更新为开发模式
