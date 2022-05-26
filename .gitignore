@@ -11,7 +11,7 @@
 *.dll
 *.so
 *.dylib
-
+cmd/alert-gateway/log/*
 # Test binary
 *.test
 

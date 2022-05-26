@@ -64,18 +64,19 @@ doraemon 的动态配置告警规则能力，来自相对独立的 rule-engine�
    cd cmd/alert-gateway && go run main.go
   
    #启动rule-engine
-   cd cmd/rule-engine && go run main.go --gateway.url=http://alert-gateway:port
+   cd cmd/rule-engine && go run main.go --gateway.url=http://127.0.0.1:8080
   
    #启动前端
    npm install --registry=https://registry.npm.taobao.org
    npm run dll
    npm run dev
-   # 涉及到的 api 域名指向需要修改 app/config.js,即后端地址
+   # 修改文件 web/app/config.js,指向后端地址
    window.CONFIG = {
      baseURL: 'http://localhost:8080',
    }
    ```
-   通过上述命令，您可以从通过 http://本机ip:32000 访问 Doraemon。默认登录用户 admin，密码是 123456。
+   
+   最后，浏览器打开地址 http://本机ip:8888 访问 Doraemon。默认登录用户 admin，密码是 123456。
 
 ## 文档
 
